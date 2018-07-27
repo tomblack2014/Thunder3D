@@ -6,15 +6,11 @@
 #include <gl\GL.h>
 #include <gl\GLU.h>
 
-#include "planet.h"
-#include "star.h"
-#include "craft.h"
-#include "camera.h"
-#include "controller.h"
-#include "SurroundBox.h"
-#include "ParticleSystem.h"
-#include "cubemap.h"
-#include "LightCone.h"
+#include <vector>
+
+#include "basescene.h"
+#include "Comment.h"
+
 
 /**
 * 应用程序和场景类
@@ -50,41 +46,23 @@ public:
 
 	HWND GetHwnd();
 
-	//选择对象事件
-	//point : 选择点
-	void OnSelect(_In_ const Vec4f& point);
-
-	//追踪对象事件
-	//point : 选择点
-	void OnTrace(_In_ const Vec4f& point);
-
-	//创建标准控制器和摄像机
-	//使用自由视角
-	//这些函数的设计并不是最优设计
-	void UseStandardView();
-
-	//创建跟踪控制器和摄像机
-	void UseTraceView(_In_ IObject* obj);
-
-	//创建飞船控制器和摄像机
-	void UseCraftView();
+	HDC GetHDC();
 
 private:
-	Star* sun;
-	Planet* earth;
-	Planet* moon;
-	Craft* craft;
-	SurroundBox* surbox;
-	ParticleSystem* partisys;
-	CubeMap* cubemap;
-	LightCone* lightcone;
 
-	ICamera* camera;
-	Controller* control;
+	std::vector<BaseScene*> m_sceneList;
+
+	BaseScene* m_lastScene;
+	BaseScene* m_curScene;
+
 };
 
 inline HWND App::GetHwnd(){
 	return hWnd;
+}
+
+inline HDC App::GetHDC() {
+	return hDC;
 }
 
 #endif

@@ -1,126 +1,258 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="源文件">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="头文件">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="资源文件">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{ea6a3cda-3d56-4fa4-b8e1-531e25070c3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="props">
+      <UniqueIdentifier>{2a66c705-6e54-4eb2-be55-bc9f9df4b93f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="old">
+      <UniqueIdentifier>{0071ac3f-b99d-45d4-8339-1c5aa2852596}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base">
+      <UniqueIdentifier>{25a36736-b57a-4493-8f15-8963d637a0a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI">
+      <UniqueIdentifier>{eb8dcef3-0727-4a93-969a-6d43a8fd4f77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="app">
+      <UniqueIdentifier>{71894424-3f5a-476d-9a91-e9ccc76eb357}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="app\头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="app\源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ParticalSystem">
+      <UniqueIdentifier>{508f836a-099b-4b53-bcfe-58d3b7b9208c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="app.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="camera.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="controller.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="craft.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="cubemap.cpp">
-      <Filter>源文件</Filter>
+      <Filter>app\源文件</Filter>
     </ClCompile>
     <ClCompile Include="debug.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="LightCone.cpp">
-      <Filter>源文件</Filter>
+      <Filter>app\源文件</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="mat4f.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="materialModel.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="model.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="object.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ParticleSystem.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="planet.cpp">
-      <Filter>源文件</Filter>
+      <Filter>app\源文件</Filter>
     </ClCompile>
     <ClCompile Include="star.cpp">
-      <Filter>源文件</Filter>
+      <Filter>old</Filter>
     </ClCompile>
-    <ClCompile Include="SurroundBox.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="planet.cpp">
+      <Filter>old</Filter>
+    </ClCompile>
+    <ClCompile Include="craft.cpp">
+      <Filter>old</Filter>
+    </ClCompile>
+    <ClCompile Include="LightCone.cpp">
+      <Filter>old</Filter>
     </ClCompile>
     <ClCompile Include="Trace.cpp">
-      <Filter>源文件</Filter>
+      <Filter>old</Filter>
+    </ClCompile>
+    <ClCompile Include="basescene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="TestScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter1Scene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>props</Filter>
+    </ClCompile>
+    <ClCompile Include="FrontSight.cpp">
+      <Filter>props</Filter>
+    </ClCompile>
+    <ClCompile Include="Strip.cpp">
+      <Filter>props</Filter>
+    </ClCompile>
+    <ClCompile Include="HurtAnimate.cpp">
+      <Filter>props</Filter>
+    </ClCompile>
+    <ClCompile Include="Comment.cpp">
+      <Filter>props</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter2Scene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="cubemap.cpp">
+      <Filter>props</Filter>
+    </ClCompile>
+    <ClCompile Include="mat4f.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="object.cpp">
+      <Filter>base</Filter>
     </ClCompile>
     <ClCompile Include="vec4f.cpp">
-      <Filter>源文件</Filter>
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="model.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="materialModel.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>props</Filter>
+    </ClCompile>
+    <ClCompile Include="controller.cpp">
+      <Filter>props</Filter>
+    </ClCompile>
+    <ClCompile Include="SurroundBox.cpp">
+      <Filter>props</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleEnemy.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystem.cpp">
+      <Filter>ParticalSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Partical.cpp">
+      <Filter>ParticalSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionPartSys.cpp">
+      <Filter>ParticalSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseAI.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter3Scene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="VictoryScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="DefeatScene.cpp">
+      <Filter>Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="app.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="camera.h">
-      <Filter>头文件</Filter>
+      <Filter>app\头文件</Filter>
     </ClInclude>
     <ClInclude Include="common.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="controller.h">
-      <Filter>头文件</Filter>
+      <Filter>app\头文件</Filter>
     </ClInclude>
     <ClInclude Include="craft.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="cubemap.h">
-      <Filter>头文件</Filter>
+      <Filter>old</Filter>
     </ClInclude>
     <ClInclude Include="LightCone.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="mat4f.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="materialModel.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="model.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="object.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="ParticleSystem.h">
-      <Filter>头文件</Filter>
+      <Filter>old</Filter>
     </ClInclude>
     <ClInclude Include="planet.h">
-      <Filter>头文件</Filter>
+      <Filter>old</Filter>
     </ClInclude>
     <ClInclude Include="star.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="SurroundBox.h">
-      <Filter>头文件</Filter>
+      <Filter>old</Filter>
     </ClInclude>
     <ClInclude Include="Trace.h">
-      <Filter>头文件</Filter>
+      <Filter>old</Filter>
+    </ClInclude>
+    <ClInclude Include="basescene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="global.h">
+      <Filter>app\头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter2Scene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="TestScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter1Scene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>props</Filter>
+    </ClInclude>
+    <ClInclude Include="FrontSight.h">
+      <Filter>props</Filter>
+    </ClInclude>
+    <ClInclude Include="Strip.h">
+      <Filter>props</Filter>
+    </ClInclude>
+    <ClInclude Include="HurtAnimate.h">
+      <Filter>props</Filter>
+    </ClInclude>
+    <ClInclude Include="Comment.h">
+      <Filter>props</Filter>
+    </ClInclude>
+    <ClInclude Include="cubemap.h">
+      <Filter>props</Filter>
+    </ClInclude>
+    <ClInclude Include="mat4f.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="object.h">
+      <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="vec4f.h">
-      <Filter>头文件</Filter>
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="model.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="materialModel.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>props</Filter>
+    </ClInclude>
+    <ClInclude Include="controller.h">
+      <Filter>props</Filter>
+    </ClInclude>
+    <ClInclude Include="SurroundBox.h">
+      <Filter>props</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleEnemy.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystem.h">
+      <Filter>ParticalSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Partical.h">
+      <Filter>ParticalSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionPartSys.h">
+      <Filter>ParticalSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseAI.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter3Scene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="VictoryScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="DefeatScene.h">
+      <Filter>Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

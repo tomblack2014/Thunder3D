@@ -9,6 +9,32 @@ Mat4f Mat4f::translate(_In_ const Vec4f& pos){
 		);
 }
 
+Vec4f Mat4f::GetEye2At()
+{
+	Vec4f eye2at;
+	eye2at.x = -this->at(2, 0);
+	eye2at.y = -this->at(2, 1);
+	eye2at.z = -this->at(2, 2);
+	eye2at.w = 0.f;
+
+	eye2at.normal();
+
+	return eye2at;
+}
+
+Vec4f Mat4f::GetUp()
+{
+	Vec4f up;
+	up.x = this->at(1, 0);
+	up.y = this->at(1, 1);
+	up.z = this->at(1, 2);
+	up.w = 0.f;
+
+	up.normal();
+
+	return up;
+}
+
 Mat4f Mat4f::lookat(_In_ const Vec4f& eye, _Inout_ Vec4f& at, _Inout_ Vec4f& up)
 {
 	Vec4f f = at - eye;

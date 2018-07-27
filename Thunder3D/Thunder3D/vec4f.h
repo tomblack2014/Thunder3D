@@ -50,10 +50,13 @@ struct Vec4f{
 	Vec4f operator/(_In_ const float scalar) const;
 
 	//单位化当前向量
-	void normal();
+	Vec4f normal();
 
 	//向量的叉乘
 	Vec4f cross(_In_ const Vec4f &rhs) const;
+
+	//计算两个向量之间的向量
+	float CalAng(_In_ const Vec4f &rhs);
 
 	//向量的长度
 	float length() const;
@@ -130,8 +133,9 @@ inline Vec4f Vec4f::operator/(_In_ const float scalar) const{
 	return *this * (1.0f / scalar);
 }
 
-inline void Vec4f::normal(){
+inline Vec4f Vec4f::normal(){
 	*this = *this / this->length();
+	return *this;
 }
 
 inline Vec4f Vec4f::cross(_In_ const Vec4f &rhs) const{
@@ -140,6 +144,11 @@ inline Vec4f Vec4f::cross(_In_ const Vec4f &rhs) const{
 		v[2] * rhs.v[0] - v[0] * rhs.v[2],
 		v[0] * rhs.v[1] - v[1] * rhs.v[0],
 		0.0f);
+}
+
+inline float Vec4f::CalAng(_In_ const Vec4f &rhs)
+{
+	return acos(this->dot(rhs) / this->length() / rhs.length());
 }
 
 inline float Vec4f::length() const{

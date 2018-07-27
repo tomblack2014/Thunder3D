@@ -53,6 +53,12 @@ struct Mat4f{
 	//矩阵对应点相乘
 	Mat4f mul(_In_ const Mat4f& rhs) const;
 
+	//获取观察矩阵视点到正对点之间的单位向量
+	Vec4f GetEye2At();
+
+	//获取观察矩阵上方向向量
+	Vec4f GetUp();
+
 	//平移矩阵
 	//pos: 平移向量
 	static Mat4f translate(_In_ const Vec4f& pos);

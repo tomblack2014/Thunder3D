@@ -3,13 +3,12 @@
 #include <gl\GL.h>
 #include <gl\GLu.h>
 
+#include "TestScene.h"
+
 Controller::Controller(_In_ App* app) :
 app(app)
 {
-	for(int i = 0; i < 256; i ++)
-		keys[i] = KEY_UP;
-	lbutton = KEY_UP;
-	rbutton = KEY_UP;
+	ResetKeyState();
 }
 
 void Controller::OnKeyDown(_In_ UINT key){
@@ -79,6 +78,14 @@ void Controller::CopyKeyState(_In_ Controller* src)
 	}
 }
 
+void Controller::ResetKeyState()
+{
+	for (int i = 0; i < 256; i++)
+		keys[i] = KEY_UP;
+	lbutton = KEY_UP;
+	rbutton = KEY_UP;
+}
+
 void Controller::OnMouseDown(_In_ bool isLeft, _In_ int x, _In_ int y){
 	if(isLeft){
 		if(lbutton == KEY_UP){
@@ -138,9 +145,10 @@ void Controller::UpdateMousePos(){
 const float CameraController::TRANS_SPEED = 3.0f;
 const float CameraController::ROTATE_SPEED = 1.0f;
 
-CameraController::CameraController(_In_ FreeCamera* camera, _In_ App* app) :
+CameraController::CameraController(_In_ FreeCamera* camera, _In_ App* app, _In_ TestScene* scene) :
 Controller(app),
-camera(camera)
+camera(camera),
+m_scene(scene)
 {
 	camera->AddRef();
 }
@@ -199,22 +207,22 @@ void CameraController::Frame(_In_ float interval){
 
 	//恢复视角
 	if(keys[VK_SPACE] == KEY_PRESS){
-		app->UseStandardView();
+		m_scene->UseStandardView();
 		return; //这里因为自身已经被释放了，所以必须立刻返回
 	}
 
 	//飞船控制视角
 	if(keys[VK_F3] == KEY_PRESS){
-		app->UseCraftView();
+		m_scene->UseCraftView();
 		return; //这里因为自身已经被释放了，所以必须立刻返回
 	}
 
 	//处理点击事件（框选和跟踪）
 	if(lbutton == KEY_PRESS){
-		app->OnSelect(GetHitPoint());
+		m_scene->OnSelect(GetHitPoint());
 	}
 	if(rbutton == KEY_PRESS){
-		app->OnTrace(GetHitPoint());
+		m_scene->OnTrace(GetHitPoint());
 		return; //这里因为自身已经被释放了，所以必须立刻返回
 	}
 
@@ -224,30 +232,31 @@ void CameraController::Frame(_In_ float interval){
 
 //////////////////////////////////////////////////////////////////////////
 
-TraceController::TraceController(_In_ App* app):
-Controller(app)
+TraceController::TraceController(_In_ App* app, _In_ TestScene* scene):
+Controller(app),
+m_scene(scene)
 {
 }
 
 void TraceController::Frame(_In_ float interval){
 	//恢复视角
 	if(keys[VK_SPACE] == KEY_PRESS){
-		app->UseStandardView();
+		m_scene->UseStandardView();
 		return; //这里因为自身已经被释放了，所以必须立刻返回
 	}
 
 	//飞船控制视角
 	if(keys[VK_F3] == KEY_PRESS){
-		app->UseCraftView();
+		m_scene->UseCraftView();
 		return; //这里因为自身已经被释放了，所以必须立刻返回
 	}
 
 	//处理点击事件（框选和跟踪）
 	if(lbutton == KEY_PRESS){
-		app->OnSelect(GetHitPoint());
+		m_scene->OnSelect(GetHitPoint());
 	}
 	if(rbutton == KEY_PRESS){
-		app->OnTrace(GetHitPoint());
+		m_scene->OnTrace(GetHitPoint());
 		return ; //这里因为自身已经被释放了，所以必须立刻返回
 	}
 
@@ -292,16 +301,16 @@ void CraftController::Frame(_In_ float interval){
 	}
 
 	//恢复视角
-	if(keys[VK_SPACE] == KEY_PRESS){
-		app->UseStandardView();
-		return; //这里因为自身已经被释放了，所以必须立刻返回
-	}
+	//if(keys[VK_SPACE] == KEY_PRESS){
+	//	app->UseStandardView();
+	//	return; //这里因为自身已经被释放了，所以必须立刻返回
+	//}
 
-	//飞船控制视角
-	if(keys[VK_F3] == KEY_PRESS){
-		app->UseCraftView();
-		return; //这里因为自身已经被释放了，所以必须立刻返回
-	}
+	////飞船控制视角
+	//if(keys[VK_F3] == KEY_PRESS){
+	//	app->UseCraftView();
+	//	return; //这里因为自身已经被释放了，所以必须立刻返回
+	//}
 
 	//更新按键状态
 	Controller::Frame(interval);

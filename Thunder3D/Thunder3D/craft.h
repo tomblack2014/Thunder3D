@@ -51,6 +51,8 @@ public:
 	*/
 	Vec4f GetUp();
 
+	void SetPos(Vec4f pos);
+
 
 	/**
 	*  \brief  沿屏幕左右旋转
@@ -65,6 +67,15 @@ public:
 	*  \param  ang  角度
 	*/
 	void RotateUD(_In_ float ang);
+
+	/**
+	*  \brief  沿某个轴旋转飞船
+	*
+	*  \param  axis  旋转轴
+	*
+	*  \param  ang  角度
+	*/
+	void Rotate(Vec4f axis, float ang);
 
 	/**
 	*  \brief  前后调整速度
@@ -82,7 +93,7 @@ public:
 	//用半径什么的卡一下就行，不要求很精确
 	bool Collide(_In_ const Vec4f& point);
 
-private:
+protected:
 	Craft(const Vec4f& pos, const Vec4f& velocity, const Vec4f& up);
 
 	//以下请自行实现其他内部需要的方法和成员

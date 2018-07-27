@@ -42,6 +42,16 @@ public:
 
 	Vec4f GetPos();
 
+	/**
+	* 获取注视点坐标
+	*/
+	virtual Vec4f GetEye2At();
+
+	/**
+	* 获取上方向矢量
+	*/
+	virtual Vec4f GetUp();
+
 	void Frame(_In_ float interval);
 
 	void Render();
@@ -96,6 +106,16 @@ public:
 	* 垂直转动摄像头（屏幕坐标系）
 	*/
 	void RotateUD(_In_ float ang);
+
+	/**
+	* 获取注视点坐标
+	*/
+	virtual Vec4f GetEye2At();
+
+	/**
+	* 获取上方向矢量
+	*/
+	virtual Vec4f GetUp();
 
 	/**
 	* 设置一个历史位置
@@ -172,7 +192,30 @@ public:
 
 	void MakeBillBoard();
 
+	void SetDis(float delta);
+
+	void ChangeMode();
+
+	/**
+	* 获取注视点坐标
+	*/
+	virtual Vec4f GetEye2At();
+
+	/**
+	* 获取上方向矢量
+	*/
+	virtual Vec4f GetUp();
+
 	static CraftCamera* create(_In_ Craft* craft);
+
+private:
+	const float MAX_DIS;
+	const float MIN_DIS;
+	float m_curDis;
+
+	float m_changeModeCD;
+	float CHANGDE_MODE_CD;
+	int m_mode;
 };
 
 #endif

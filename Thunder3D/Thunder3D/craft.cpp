@@ -87,6 +87,11 @@ Vec4f Craft::GetUp()
 	return _up;
 }
 
+void Craft::SetPos(Vec4f pos)
+{
+	this->pos = pos;
+}
+
 void Craft::RotateLR(_In_ float ang)
 {
 	Mat4f mat = Mat4f::rotate(_up, -ang);
@@ -102,14 +107,22 @@ void Craft::RotateUD(_In_ float ang)
 	_up = mat * _up;
 }
 
+void Craft::Rotate(Vec4f axis, float ang)
+{
+	Mat4f mat = Mat4f::rotate(axis, ang);
+
+	_velocity = mat * _velocity;
+}
+
 void Craft::Accelerate(_In_ float delta_speed)
 {
 	float speed = _velocity.length();
 	if (speed + delta_speed < _LOWEST_SPEED)
 		speed = _LOWEST_SPEED;
-	if (speed + delta_speed > _HIGHEST_SPEED)
+	else if (speed + delta_speed > _HIGHEST_SPEED)
 		speed = _HIGHEST_SPEED;
-	speed += delta_speed;
+	else
+		speed += delta_speed;
 
 	_velocity.normal();
 	_velocity = _velocity * speed;

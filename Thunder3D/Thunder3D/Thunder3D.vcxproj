@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -21,32 +21,32 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C2B6370A-00F8-401B-89C8-672D5486BD56}</ProjectGuid>
     <RootNamespace>Thunder3D</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -80,7 +80,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -89,7 +89,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -111,7 +111,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="app.cpp" />
+    <ClCompile Include="BaseAI.cpp" />
+    <ClCompile Include="basescene.cpp" />
+    <ClCompile Include="Boss.cpp" />
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="camera.cpp" />
+    <ClCompile Include="Chapter1Scene.cpp" />
+    <ClCompile Include="Chapter2Scene.cpp" />
+    <ClCompile Include="Chapter3Scene.cpp" />
+    <ClCompile Include="CollisionPartSys.cpp" />
+    <ClCompile Include="DefeatScene.cpp" />
+    <ClCompile Include="FrontSight.cpp" />
+    <ClCompile Include="HurtAnimate.cpp" />
+    <ClCompile Include="Partical.cpp" />
+    <ClCompile Include="SimpleEnemy.cpp" />
+    <ClCompile Include="Strip.cpp" />
+    <ClCompile Include="TestScene.cpp" />
+    <ClCompile Include="Comment.cpp" />
     <ClCompile Include="controller.cpp" />
     <ClCompile Include="craft.cpp" />
     <ClCompile Include="cubemap.cpp" />
@@ -122,31 +138,52 @@
     <ClCompile Include="materialModel.cpp" />
     <ClCompile Include="model.cpp" />
     <ClCompile Include="object.cpp" />
+    <ClCompile Include="OpenScene.cpp" />
     <ClCompile Include="ParticleSystem.cpp" />
     <ClCompile Include="planet.cpp" />
     <ClCompile Include="star.cpp" />
     <ClCompile Include="SurroundBox.cpp" />
     <ClCompile Include="Trace.cpp" />
     <ClCompile Include="vec4f.cpp" />
+    <ClCompile Include="VictoryScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="app.h" />
+    <ClInclude Include="BaseAI.h" />
+    <ClInclude Include="basescene.h" />
+    <ClInclude Include="Boss.h" />
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="camera.h" />
+    <ClInclude Include="Chapter1Scene.h" />
+    <ClInclude Include="Chapter3Scene.h" />
+    <ClInclude Include="CollisionPartSys.h" />
+    <ClInclude Include="DefeatScene.h" />
+    <ClInclude Include="FrontSight.h" />
+    <ClInclude Include="HurtAnimate.h" />
+    <ClInclude Include="Partical.h" />
+    <ClInclude Include="SimpleEnemy.h" />
+    <ClInclude Include="Strip.h" />
+    <ClInclude Include="TestScene.h" />
+    <ClInclude Include="Chapter2Scene.h" />
+    <ClInclude Include="Comment.h" />
     <ClInclude Include="common.h" />
     <ClInclude Include="controller.h" />
     <ClInclude Include="craft.h" />
     <ClInclude Include="cubemap.h" />
+    <ClInclude Include="global.h" />
     <ClInclude Include="LightCone.h" />
     <ClInclude Include="mat4f.h" />
     <ClInclude Include="materialModel.h" />
     <ClInclude Include="model.h" />
     <ClInclude Include="object.h" />
+    <ClInclude Include="OpenScene.h" />
     <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="planet.h" />
     <ClInclude Include="star.h" />
     <ClInclude Include="SurroundBox.h" />
     <ClInclude Include="Trace.h" />
     <ClInclude Include="vec4f.h" />
+    <ClInclude Include="VictoryScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

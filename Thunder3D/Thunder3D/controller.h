@@ -6,6 +6,7 @@
 #include "craft.h"
 
 class App;
+class TestScene;
 
 class Controller{
 protected:
@@ -52,6 +53,9 @@ public:
 
 	//¸´ÖÆ°´¼ü×´Ì¬
 	void CopyKeyState(_In_ Controller* src);
+
+	//ÖØÖÃ°´¼ü×´Ì¬
+	void ResetKeyState();
 };
 
 //////////////////////////////////////////////////////////////////////////
@@ -68,19 +72,23 @@ protected:
 	static const float ROTATE_SPEED;
 
 public:
-	CameraController(_In_ FreeCamera* camera, _In_ App* app);
+	CameraController(_In_ FreeCamera* camera, _In_ App* app, _In_ TestScene* scene);
 	~CameraController();
 
 	void Frame(_In_ float interval);
+private:
+	TestScene* m_scene;
 };
 
 //////////////////////////////////////////////////////////////////////////
 
 class TraceController : public Controller{
 public:
-	TraceController(_In_ App* app);
+	TraceController(_In_ App* app, _In_ TestScene* scene);
 
 	void Frame(_In_ float interval);
+private:
+	TestScene* m_scene;
 };
 
 //////////////////////////////////////////////////////////////////////////
