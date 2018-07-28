@@ -133,8 +133,8 @@ T3D::SCENE Chapter1Scene::Update(float interval)
 				if (iter->second <= 0) {
 					CollisionPartSys* coll = CollisionPartSys::create(m_camera, iter->first->GetPos());
 					coll->Initialize("config/Particle.png");
-					coll->SetCollisionR(20.5f);
-					coll->SetLifeTime(0.4f);
+					coll->SetCollisionR(15.f);
+					coll->SetLifeTime(0.3f);
 					m_collision.push_back(coll);
 					SafeRelease(&iter->first);
 					iter = m_rocks.erase(iter);
@@ -220,7 +220,7 @@ void Chapter1Scene::Reset()
 	std::vector<Vec4f> poss;
 	m_comment->Set(contexts, colors, poss);
 
-	m_leftTime = 300.f;
+	m_leftTime = 60.f;
 }
 
 void Chapter1Scene::Shoot(Vec4f pos, Vec4f v)

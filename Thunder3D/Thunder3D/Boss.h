@@ -52,7 +52,11 @@ private:
 
 	void DrawLockBeam();
 
+	void DrawPyramin(float time);
+
 	void Shoot(Vec4f sPos, Vec4f v, float lifetime);
+
+	void RectShoot(Vec4f up, Vec4f right, Vec4f v);
 
 	void RanV();
 
@@ -75,6 +79,10 @@ private:
 	//״̬һ
 	int m_frameCount1_2;
 	
+	//״̬��
+	int m_movePosX, m_movePosY, m_movePosZ;
+	float m_shootAng2_1;
+	Vec4f m_tarVec2_2;
 };
 
 inline Boss* Boss::create(Craft* craft, int hp)

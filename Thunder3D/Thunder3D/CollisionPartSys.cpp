@@ -105,7 +105,7 @@ CollisionPartSys* CollisionPartSys::create(_In_ ICamera* camera, Vec4f pos)
 
 bool CollisionPartSys::IsExist()
 {
-	/*if (plist.empty() && m_life < 0.f)
-		return false;*/
+	if (plist.empty() && m_life < 0.f)
+		return false;
 	return true;
 }
