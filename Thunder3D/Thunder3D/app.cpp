@@ -8,7 +8,7 @@
 #include "VictoryScene.h"
 #include "DefeatScene.h"
 
-LPCTSTR App::title = TEXT("Assignment");
+LPCTSTR App::title = TEXT("Thunder3D");
 
 typedef void (APIENTRY *PFNWGLEXTSWAPCONTROLPROC) (int);
 PFNWGLEXTSWAPCONTROLPROC wglSwapIntervalEXT = NULL;
